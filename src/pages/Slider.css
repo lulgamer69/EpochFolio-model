@@ -1,0 +1,287 @@
+.slider-container {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #000000;
+    color: #ffffff;
+    height: 70px;
+    box-sizing: border-box;
+}
+
+.brand-logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.nav-group-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Button & Icons */
+.icon-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.icon-btn:hover {
+    color: #e85d04;
+}
+
+.search-icon {
+    width: 22px;
+    height: 22px;
+}
+
+/* --- NEW SEARCH ANIMATION --- */
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.search-input-box {
+    display: flex;
+    align-items: center;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 4px 8px;
+    overflow: hidden;
+    /* Bahar nikle huye content ko chupata hai */
+
+    /* Animation */
+    width: 180px;
+    animation: expandWidth 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Animation definition */
+@keyframes expandWidth {
+    from {
+        width: 40px;
+        opacity: 0;
+    }
+
+    to {
+        width: 180px;
+        opacity: 1;
+    }
+}
+
+.search-input-box input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    outline: none;
+    padding: 0 8px;
+    font-size: 0.95rem;
+    width: 100%;
+    /* Full width of parent */
+}
+
+/* Ensure Close Button (X) doesn't squish */
+.close-search {
+    min-width: 24px;
+}
+
+/* Desktop Nav */
+.desktop-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.desktop-nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.desktop-nav .nav-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.desktop-nav a:hover {
+    color: #e85d04;
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+/* MOBILE SETTINGS */
+@media (max-width: 768px) {
+    .top-bar {
+        padding: 1rem;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-group-right {
+        gap: 15px;
+    }
+
+    /* Mobile Search Width Fix */
+    .search-input-box {
+        width: 120px;
+        /* Target Width for Mobile */
+        animation: expandWidthMobile 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    }
+
+    @keyframes expandWidthMobile {
+        from {
+            width: 40px;
+            opacity: 0;
+        }
+
+        to {
+            width: 120px;
+            opacity: 1;
+        }
+    }
+
+    .search-input-box input {
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    z-index: 1000;
+    transition: 0.4s ease-in-out;
+    overflow-y: auto;
+}
+
+.mobile-menu.active {
+    left: 0;
+}
+
+.menu-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex-grow: 1;
+}
+
+.mobile-nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.mobile-nav-links .nav-icon {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+}
+
+.menu-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 20px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.copyright {
+    color: #555;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.watermark {
+    font-size: 13vw;
+    font-weight: 900;
+    color: #111;
+    text-transform: uppercase;
+    -webkit-user-select: none;
+    user-select: none;
+    line-height: 1;
+    text-align: center;
+    margin-top: 1rem;
+}
