@@ -171,9 +171,11 @@ function HomePage() {
           />
           <div className="core-services-overlay"></div>
           <div className="core-services-text bottom">
-            <h2>Internship</h2>
-            <h2>Matching & Trial</h2>
-            <h2>Periods</h2>
+            <h2>
+            Internship<br/>
+            Matching & Trial<br/>
+            Periods
+            </h2>
           </div>
         </div>
       </section>
@@ -188,8 +190,8 @@ function HomePage() {
           />
           <div className="core-services-overlay-alt"></div>
           <div className="core-services-text-alt bottom">
-            <h2>Industry-Aligned</h2>
-            <h2>Mentorship</h2>
+            <h2>Industry-Aligned<br/>
+              Mentorship</h2>
           </div>
         </div>
       </section>
@@ -204,8 +206,8 @@ function HomePage() {
           />
           <div className="core-services-overlay-v3"></div>
           <div className="core-services-text-v3">
-            <h2>Final Placement</h2>
-            <h2>Drives & Grooming</h2>
+            <h2>Final Placement<br/>
+            Drives & Grooming</h2>
           </div>
         </div>
       </section>
