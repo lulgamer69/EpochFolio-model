@@ -6,11 +6,6 @@ import image3 from '../assets/HomePage/hall.png';
 import hand from '../assets/HomePage/hand.png';
 import plan from '../assets/HomePage/plan.png';
 import write from '../assets/HomePage/write.png';
-import rect1 from '../assets/HomePage/rectangle1.png';
-import rect2 from '../assets/HomePage/rectangle2.png';
-import rect3 from '../assets/HomePage/rectangle3.png';
-import rect4 from '../assets/HomePage/rectangle4.png';
-import rect5 from '../assets/HomePage/rectangle5.png';
 import sup from '../assets/HomePage/support.png';
 import time from '../assets/HomePage/timeTracking.png';
 import zrisk from '../assets/HomePage/zeroRisk.png';
@@ -94,17 +89,31 @@ function HomePage() {
       Serving Companies for free in year one
     </p>
   </div>
-  <div className="who-we-are-content">
-    <h1 className="who-title">Our Impact</h1>
-  </div>
+  <div className="our-impact-content">
+          <h2 className="impact-title">Our Impact</h2>
+          <div className="impact-grid">
+            <div className="impact-row">
+              <div className="impact-card">
+                <p className="impact-text">22 Colleges Onboarded and<br />1000+ Students Trained</p>
+              </div>
+              <div className="impact-card">
+                <p className="impact-text">500+ Internships Facilitated</p>
+              </div>
+              <div className="impact-card">
+                <p className="impact-text">30+ Corporate Partners in Pipeline</p>
+              </div>
+            </div>
+            <div className="impact-row">
+              <div className="impact-card">
+                <p className="impact-text">15+ Skill Training Modules Launched</p>
+              </div>
+              <div className="impact-card">
+                <p className="impact-text">Hosted TPO Excellence Awards 2025 with<br />100+ dignitaries</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  <div className="impact-cards">
-  <img src={rect1} alt="Impact 1" />
-  <img src={rect2} alt="Impact 2" />
-  <img src={rect3} alt="Impact 3" />
-  <img src={rect4} alt="Impact 4" />
-  <img src={rect5} alt="Impact 5" />
-</div>
 
  <div className="who-we-are-content">
     <h1 className="who-title">Why Colleges & Companies Trust Epochfolio</h1>
