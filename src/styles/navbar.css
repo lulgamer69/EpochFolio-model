@@ -1,0 +1,139 @@
+/* ===== NAVBAR ===== */
+.navbar {
+  width: 100%;
+  height: 110px;
+  background: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+}
+
+/* ===== NAV INNER ===== */
+.nav-inner {
+  position: relative;
+  width: 100%;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+}
+
+/* LEFT */
+.nav-left img {
+  height: 64px;
+}
+
+/* CENTER */
+.nav-center {
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-center a {
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  position: relative;
+}
+
+/* UNDERLINE ANIMATION */
+.nav-center a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: #f59118;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-center a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-center a.active {
+  color: #ff3b3b;
+}
+
+/* RIGHT */
+.nav-right {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 18px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* SEARCH BOX */
+.search-box {
+  position: absolute;
+  top: 100%;
+  right: 16px;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+/* MOBILE SEARCH */
+.search-box.mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  border-radius: 0;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  .nav-center {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 16px;
+    gap: 20px;
+    display: none;
+  }
+
+  .nav-center.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
