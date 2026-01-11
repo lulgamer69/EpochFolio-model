@@ -4,6 +4,7 @@ import heroImg from "../assets/hero-illustration.png";
 import missionImg from "../assets/mission-success.png";
 import OurmissionImg from "../assets/Ourmission.png";
 import architecturalImg from "../assets/architectural.png";
+import overlayImg from "../assets/OURVISION.png"
 import naitikImg from "../assets/NaitikJoshi.png";  // ✅ Fixed - no space
 import niteshImg from "../assets/NiteshSharma.png";
 import footerlogoImg from "../assets/epochfolio-footer-logo.png";
@@ -68,64 +69,74 @@ export default function About() {
         </div>
       </section>
 
-      {/* 4. VISION SECTION */}
       <section className="vision-section">
-        <div className="vision-background">
-          <img src={architecturalImg} alt="Vision background" />
-        </div>
+
+        {/* Background Image */}
+        <img
+          src={architecturalImg}
+          alt="Architecture background"
+          className="vision-bg"
+        />
+
+        {/* OUR VISION watermark */}
+        <img
+          src={overlayImg}
+          alt="Our Vision Text"
+          className="vision-watermark"
+        />
+
+        {/* Center Text */}
         <div className="vision-content">
-          <h2>OUR VISION</h2>
           <p>
             A future where no capable student is left behind because of a lack of
             network, exposure, or opportunity.
           </p>
         </div>
+
       </section>
 
 
-      {/* FOUNDERS SECTION */}
+      {/* FOUNDERS SECTION - SIMPLE */}
       <section className="founders">
         <h2>OUR FOUNDERS</h2>
 
-        <div className="founder-cards">
+        <div className="founders-list">
 
           {/* FOUNDER 1 */}
-          <div className="founder-card">
-            <img
-              src={naitikImg}
-              alt="Naitik Joshi"
-              className="founder-image"
-            />
-            <h3>Naitik Joshi</h3>
-            <span>Founder</span>
+          <div className="founder-row">
+            <div className="founder-image-container">
+              <div className="founder-image">
+                <img src={naitikImg} alt="Naitik Joshi" />
+              </div>
+              <h3 className="founder-name">Naitik Joshi</h3>
+              <span className="founder-title">Founder</span>
+            </div>
 
-            <p>
-              "I wasn't from a Tier 1 college. I didn't have IIT–IIM networks.
-              But I had fire. I built EpochFolio for students like me — who just
-              need one chance to change everything."
-            </p>
+            <div className="founder-info">
+              <p>"I wasn't from a Tier 1 college. I didn't have IIT–IIM networks. But I had fire. I built EpochFolio for students like me — who just need one chance to change everything."</p>
+            </div>
           </div>
 
           {/* FOUNDER 2 */}
-          <div className="founder-card">
-            <img
-              src={niteshImg}
-              alt="Nitesh Kumar Sharma"
-              className="founder-image"
-            />
-            <h3>Nitesh Kumar Sharma</h3>
-            <span>Co-Founder</span>
+          <div className="founder-row">
+            <div className="founder-image-container">
+              <div className="founder-image">
+                <img src={niteshImg} alt="Nitesh Kumar Sharma" />
+              </div>
+              <h3 className="founder-name">Nitesh Kumar Sharma</h3>
+              <span className="founder-title">Co-Founder</span>
+            </div>
 
-            <p>
-              With over 10 years of experience working closely with companies,
-              colleges, and students, I understand the placement ecosystem and
-              the real gaps that need to be solved.
-            </p>
+            <div className="founder-info">
+              <p>With over 10 years of experience working closely with companies, colleges, and students, I understand the placement ecosystem and the real gaps that need to be solved.</p>
+            </div>
           </div>
 
         </div>
       </section>
-    <Footer/>
+
+
+      <Footer />
 
 
     </div>
