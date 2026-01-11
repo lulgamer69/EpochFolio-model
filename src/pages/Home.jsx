@@ -1,37 +1,37 @@
-import './HomePage.css';
-import chartBg from '../assets/HomePage/chart-Background.png';
-import image1 from '../assets/HomePage/coreServicesImg.png';
-import image2 from '../assets/HomePage/degree.png';
-import image3 from '../assets/HomePage/hall.png';
-import hand from '../assets/HomePage/hand.png';
-import plan from '../assets/HomePage/plan.png';
-import write from '../assets/HomePage/write.png';
-import sup from '../assets/HomePage/support.png';
-import time from '../assets/HomePage/timeTracking.png';
-import zrisk from '../assets/HomePage/zeroRisk.png';
-import aplan from '../assets/HomePage/affordablePlan.png';
-import founder from '../assets/HomePage/foundersVision.png';
+import './Home.css';
+import chartBg from '../assets/Home/chart-Background.png';
+import image1 from '../assets/Home/coreServicesImg.png';
+import image2 from '../assets/Home/degree.png';
+import image3 from '../assets/Home/hall.png';
+import hand from '../assets/Home/hand.png';
+import plan from '../assets/Home/plan.png';
+import write from '../assets/Home/write.png';
+import sup from '../assets/Home/support.png';
+import time from '../assets/Home/timeTracking.png';
+import zrisk from '../assets/Home/zeroRisk.png';
+import aplan from '../assets/Home/affordablePlan.png';
+import founder from '../assets/Home/foundersVision.png';
 
 import Footer from "../components/footer";
 
-function HomePage() {
+function Home() {
   return (
     <div>
 
       {/* ================= HERO SECTION ================= */}
-      <section className="homepage-container">
-        <div className="homepage-content">
-          <h1 className="homepage-title">
+      <section className="home-container">
+        <div className="home-content">
+          <h1 className="home-title">
             Transformation Placement Empowering Futures
           </h1>
 
-          <p className="homepage-description">
+          <p className="home-description">
             India's most ambitious HR partner for colleges & companies offering
             guaranteed placements, real-time hiring solutions, and deep industry
             collaborations
           </p>
 
-          <div className="homepage-buttons">
+          <div className="home-buttons">
             <button className="button button-primary">
               Request a demo
             </button>
@@ -43,16 +43,16 @@ function HomePage() {
       </section>
 
       {/* ================= IMPACT SECTION ================= */}
-      <section className="homepage-impact-container">
+      <section className="home-impact-container">
         <img
           src={chartBg}
           alt="Impact background"
-          className="homepage-impact-image"
+          className="home-impact-image"
         />
 
-        <div className="homepage-impact-bar">
-          <h2 className="homepage-title">Our Impact</h2>
-          <p className="homepage-description">
+        <div className="home-impact-bar">
+          <h2 className="home-title">Our Impact</h2>
+          <p className="home-description">
             We've helped numerous colleges and companies achieve their placement
             goals, resulting in successful student placements.
           </p>
@@ -61,7 +61,7 @@ function HomePage() {
 
       {/* ================= PATTERN BACKGROUND SECTION ================= */}
 <section className="pattern-background">
-  <div className="who-we-are-content">
+  <div className="who-we-are-content1">
     <h1 className="who-title">Who are we?</h1>
 
     <p className="who-text">
@@ -70,11 +70,13 @@ function HomePage() {
       processes
     </p>
 
+  </div>
+
+  <div className="who-we-are-images">
     <div className="who-image">
       <img src={hand} alt="Team collaboration" />
     </div>
     <p className="who-caption">trusted by 20+ tpo</p>
-
     <div className="who-image">
       <img src={plan} alt="Team collaboration" />
     </div>
@@ -89,7 +91,10 @@ function HomePage() {
       Serving Companies for free in year one
     </p>
   </div>
-  <div className="our-impact-content">
+
+
+  
+  <div className="our-impact-content1">
           <h2 className="impact-title">Our Impact</h2>
           <div className="impact-grid">
             <div className="impact-row">
@@ -115,36 +120,90 @@ function HomePage() {
         </div>
 
 
- <div className="who-we-are-content">
+ <div className="who-we-are-content2">
     <h1 className="who-title">Why Colleges & Companies Trust Epochfolio</h1>
-    <h1 className="who-title"></h1>
+  
 
     <p className="who-text">
      Effortlessly streamline your campus placement process by accessing the latest job openings, managing student data, and securing interviews, all with the aim of achieving a 100% campus placement success rate.
     </p>
   </div>
 
-  <div className="who-image-raw">
-  <img src={sup} alt="End-to-End Support" />
-</div>
+ 
 
-   <div className="who-image-raw">
-  <img src={time} alt="End-to-End Support" />
-</div>
+<section className="why-trust-section">
+  <div className="why-trust-grid">
 
-<div className="who-image-raw">
-  <img src={zrisk} alt="End-to-End Support" />
-</div>
+    <div className="trust-card">
+      <img src={sup} alt="End-to-End Support" />
+      <div className="trust-text">
+        <h3>End-to-End Support</h3>
+        <p>From MoU to placement certificate</p>
+      </div>
+    </div>
 
-<div className="who-image-raw">
-  <img src={aplan} alt="End-to-End Support" />
-</div>
+    <div className="trust-card">
+      <img src={time} alt="Real-Time Tracking" />
+      <div className="trust-text">
+        <h3>Real-Time Tracking</h3>
+        <p>Live placement dashboards coming soon</p>
+      </div>
+    </div>
 
-<div className="who-image-raw">
-  <img src={founder} alt="End-to-End Support" />
-</div>
+    <div className="trust-card">
+      <img src={zrisk} alt="Zero Risk" />
+      <div className="trust-text">
+        <h3>Zero Risk for Companies</h3>
+        <p>Only hire what fits</p>
+      </div>
+    </div>
+
+    <div className="trust-card">
+      <img src={aplan} alt="Affordable Plans" />
+      <div className="trust-text">
+        <h3>Affordable Plans with High ROI</h3>
+        <p>Education-first pricing</p>
+      </div>
+    </div>
+
+    <div className="trust-card">
+      <img src={founder} alt="Founder Vision" />
+      <div className="trust-text">
+        <h3>Founder’s Vision-Driven Team</h3>
+        <p>Ethical, long-term, people-first growth</p>
+      </div>
+    </div>
+
+  </div>
+</section>
 
    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <div className="custom-shape-divider-bottom-1767423273">
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -158,6 +217,10 @@ function HomePage() {
     </svg>
   </div>
 </section>
+
+
+
+
 
 
       <section className="white-section">
@@ -221,10 +284,20 @@ function HomePage() {
         </div>
       </section>
 
+
+
+
+
+
+
+
+
+
+
       <section className="partner-section">
         <div className="partner-content">
           <h1 className="partner-heading">
-            Let's Build the Future <br /> Together
+            Let's Build the Future Together
           </h1>
 
           <p className="partner-subtext">
@@ -243,4 +316,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default Home;
