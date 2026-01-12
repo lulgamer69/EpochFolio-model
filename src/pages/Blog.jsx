@@ -1,5 +1,7 @@
 import { useState } from "react";
-import "./Blog.css";
+import "../styles/Blog.css";
+const base = import.meta.env.BASE_URL;
+
 
 const blogData = [
   {
@@ -8,7 +10,7 @@ const blogData = [
       "Explore how artificial intelligence is transforming the education sector...",
     fullDesc:
       "Explore how artificial intelligence is transforming the education sector, enhancing personalized learning experiences, automating assessments, supporting teachers, and creating adaptive learning paths for students worldwide.",
-    img: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+    img: `${base}/BlogPics/firstAi.jpg` ,
   },
   {
     title: "Unlocking Your Potential: A Guide to Personal Development",
@@ -16,7 +18,7 @@ const blogData = [
       "Discover practical strategies to unlock your true potential...",
     fullDesc:
       "Discover practical strategies to unlock your true potential and achieve personal growth through goal setting, discipline, habit building, and continuous self-reflection.",
-    img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
+    img: `${base}/BlogPics/secUnlock.jpg`,
   },
   {
     title: "The Importance of Lifelong Learning",
@@ -24,7 +26,7 @@ const blogData = [
       "Learn why continuous learning is essential for career growth...",
     fullDesc:
       "Learn why continuous learning is essential for career growth, adaptability in changing industries, personal fulfillment, and staying relevant in a fast-changing world.",
-    img: "https://images.unsplash.com/photo-1596495577886-d920f1fb7238",
+    img:`${base}/BlogPics/thirdlifelong.jpg`,
   },
   {
     title: "Building a Strong Personal Brand Online",
@@ -32,7 +34,7 @@ const blogData = [
       "Tips and techniques to build a powerful online presence...",
     fullDesc:
       "Tips and techniques to build a powerful online presence through social media, professional networking platforms, content creation, and personal storytelling.",
-    img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
+    img: `${base}/BlogPics/fourthOnlineBrand.jpg`,
   },
   {
     title: "The Role of Emotional Intelligence",
@@ -40,7 +42,7 @@ const blogData = [
       "Understand how emotional intelligence impacts leadership...",
     fullDesc:
       "Understand how emotional intelligence impacts leadership, teamwork, communication, conflict resolution, and long-term professional success.",
-    img: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0",
+    img: `${base}/BlogPics/fifthEmotional.jpg`,
   },
   {
     title: "Navigating the Gig Economy",
@@ -48,7 +50,7 @@ const blogData = [
       "Opportunities and challenges of the gig economy...",
     fullDesc:
       "Explore the opportunities and challenges of the gig economy, including flexibility, income stability, skill development, and long-term career planning.",
-    img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+    img: `${base}/BlogPics/sixNavigate.jpg`,
   },
   {
     title: "The Power of Networking",
@@ -56,7 +58,7 @@ const blogData = [
       "How strong connections open career opportunities...",
     fullDesc:
       "Learn how building strong professional connections opens doors to new career opportunities, mentorship, collaborations, and long-term growth.",
-    img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c",
+    img: `${base}/BlogPics/sevenNetworking.jpg`,
   },
   {
     title: "The Impact of Technology on Modern Workplaces",
@@ -64,7 +66,7 @@ const blogData = [
       "How technology is reshaping modern work culture...",
     fullDesc:
       "A detailed look at how technology is reshaping modern work culture through remote work, automation, AI tools, and digital collaboration platforms.",
-    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    img:`${base}/BlogPics/eightTech.jpg`,
   },
   {
     title: "Achieving Work-Life Balance",
@@ -72,7 +74,7 @@ const blogData = [
       "Ways to maintain balance in a busy professional life...",
     fullDesc:
       "Practical strategies to maintain a healthy work-life balance, reduce burnout, manage time effectively, and improve overall well-being.",
-    img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
+    img:`${base}/BlogPics/nineWorklife.jpg`, 
   },
 ];
 
@@ -88,8 +90,9 @@ const Blog = () => {
       {/* Hero Section */}
       <div className="blog-hero">
         <img
-          src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
+          src={`${base}/BlogPics/a.jpg`} 
           alt="Blog Hero"
+          loading="lazy"
         />
       </div>
 
