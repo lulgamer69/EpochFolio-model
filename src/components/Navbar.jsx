@@ -4,6 +4,7 @@ import { FiSearch, FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/epochfolio-logo.png";
 import "../styles/navbar.css";
+import Slider from "./Slider";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,7 +27,7 @@ const Navbar = () => {
         </div>
 
         {/* CENTER */}
-        <nav className={`nav-center ${menuOpen ? "open" : ""}`}>
+        <nav className="nav-center">
           {["/", "/about", "/blog", "/contact"].map((path, i) => (
             <motion.div
               key={path}
@@ -96,6 +97,8 @@ const Navbar = () => {
             </motion.div>
           )}
         </AnimatePresence>
+
+        <Slider isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
 
       </div>
     </motion.header>
