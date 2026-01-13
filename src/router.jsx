@@ -5,15 +5,20 @@ import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 
-export const router = createBrowserRouter([
+export const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: "about", element: <About /> },
+        { path: "blog", element: <Blog /> },
+        { path: "contact", element: <Contact /> }
+      ]
+    }
+  ],
   {
-    path: "/",
-    element: <App />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: "about", element: <About /> },
-      { path: "blog", element: <Blog /> },
-      { path: "contact", element: <Contact /> }
-    ]
+    basename: "/EpochFolio-model"
   }
-]);
+);
