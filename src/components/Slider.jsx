@@ -3,8 +3,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaLinkedinIn, FaInstagram, FaEnvelope } from "react-icons/fa"; // Footer wale icons
-import logo from "../assets/epochfolio-logo.png"; // Logo import
+import { FaLinkedinIn, FaInstagram, FaEnvelope } from "react-icons/fa"; 
+import logo from "../assets/epochfolio-logo.png"; 
 import "./slider.css"; 
 
 const Slider = ({ isOpen, onClose }) => {
@@ -36,7 +36,7 @@ const Slider = ({ isOpen, onClose }) => {
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop (Background dhundla karne ke liye) */}
+          
           <motion.div 
             className="slider-backdrop"
             initial={{ opacity: 0 }}
