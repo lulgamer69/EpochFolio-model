@@ -1,46 +1,39 @@
-import "./About.css";
-import logo from "../assets/epochfolio-logo.png";
+// src/pages/About.jsx
+import "../styles/About.css";
 import heroImg from "../assets/hero-illustration.png";
 import missionImg from "../assets/mission-success.png";
 import OurmissionImg from "../assets/Ourmission.png";
 import architecturalImg from "../assets/architectural.png";
-import overlayImg from "../assets/OURVISION.png"
-import naitikImg from "../assets/NaitikJoshi.png";  // ✅ Fixed - no space
+import overlayImg from "../assets/OURVISION.png";
+import naitikImg from "../assets/NaitikJoshi.png";
 import niteshImg from "../assets/NiteshSharma.png";
-import footerlogoImg from "../assets/epochfolio-footer-logo.png";
-import Footer from "../components/footer";
+import Footer from "../components/Footer"; // ✅ Capital F
 
 export default function About() {
   return (
     <div className="about-page">
 
-      {/* ========== 1. HERO SECTION - FIRST ========== */}
+      {/* ========== 1. HERO SECTION ========== */}
       <section className="hero">
-
-        {/* Image LEFT */}
         <div className="hero-image">
           <img src={heroImg} alt="Student success illustration" />
         </div>
-
-        {/* Text RIGHT */}
         <div className="hero-text">
           <h1>
             Every student, regardless of their background, deserves a real
             chance at success.
           </h1>
         </div>
-
       </section>
 
-
-      {/* 2. ABOUT SECTION */}
+      {/* ========== 2. ABOUT SECTION ========== */}
       <section className="about-section">
         <div className="about-image">
           <img src={missionImg} alt="Student working illustration" />
         </div>
         <div className="about-text">
           <p>
-            The EpochFolio, we are not just tackling the problem
+            At <strong>EpochFolio</strong>, we are not just tackling the problem
             of poor placements — we're redefining what's possible for millions
             of students who've been overlooked, underserved, and underestimated
             by the traditional system.
@@ -48,9 +41,7 @@ export default function About() {
         </div>
       </section>
 
-
-
-      {/* 3. MISSION SECTION */}
+      {/* ========== 3. MISSION SECTION ========== */}
       <section className="mission">
         <div className="mission-image-center">
           <img src={OurmissionImg} alt="Mission target illustration" />
@@ -69,34 +60,30 @@ export default function About() {
         </div>
       </section>
 
+      {/* ========== 4. VISION SECTION ========== */}
       <section className="vision-section">
-
         {/* Background Image */}
-        <img
-          src={architecturalImg}
-          alt="Architecture background"
-          className="vision-bg"
-        />
+        <div className="vision-background">
+          {/* <img src={architecturalImg} alt="Architecture background" /> */}
+        </div>
 
-        {/* OUR VISION watermark */}
-        <img
-          src={overlayImg}
-          alt="Our Vision Text"
-          className="vision-watermark"
-        />
+        {/* Overlay Image */}
+        <div className="vision-overlay-image">
+          <img src={overlayImg} alt="Our Vision watermark" />
+        </div>
 
-        {/* Center Text */}
+        {/* Text Content */}
         <div className="vision-content">
           <p>
             A future where no capable student is left behind because of a lack of
             network, exposure, or opportunity.
           </p>
         </div>
-
       </section>
 
 
-      {/* FOUNDERS SECTION - SIMPLE */}
+
+      {/* ========== 5. FOUNDERS SECTION ========== */}
       <section className="founders">
         <h2>OUR FOUNDERS</h2>
 
@@ -113,7 +100,11 @@ export default function About() {
             </div>
 
             <div className="founder-info">
-              <p>"I wasn't from a Tier 1 college. I didn't have IIT–IIM networks. But I had fire. I built EpochFolio for students like me — who just need one chance to change everything."</p>
+              <p>
+                "I wasn't from a Tier 1 college. I didn't have IIT–IIM networks.
+                But I had fire. I built EpochFolio for students like me — who just
+                need one chance to change everything."
+              </p>
             </div>
           </div>
 
@@ -128,15 +119,18 @@ export default function About() {
             </div>
 
             <div className="founder-info">
-              <p>With over 10 years of experience working closely with companies, colleges, and students, I understand the placement ecosystem and the real gaps that need to be solved.</p>
+              <p>
+                With over 10 years of experience working closely with companies,
+                colleges, and students, I understand the placement ecosystem and
+                the real gaps that need to be solved.
+              </p>
             </div>
           </div>
 
         </div>
       </section>
 
-
-      <Footer />
+      {/* ========== 6. FOOTER ========== */}
 
 
     </div>

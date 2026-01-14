@@ -1,4 +1,75 @@
 /* ========== COMPLETE ABOUT PAGE CSS ========== */
+/* Page */
+.about-page {
+    width: 100%;
+    background-color: #f9f9f9;
+    animation: fadeInPage 0.6s ease-in-out;
+}
+
+/* Page Fade */
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ========== IMAGE HOVER EFFECT ========== */
+.hero-image img,
+.about-image img,
+.mission-image-center img,
+.founder-image img,
+.vision-overlay-image img {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-image img:hover,
+.about-image img:hover,
+.mission-image-center img:hover,
+.founder-image img:hover,
+.vision-overlay-image img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+.hero,
+.about-section,
+.mission,
+.vision-section,
+.founders {
+    animation: fadeUp 0.9s ease-out forwards;
+}
+
+.hero {
+    animation-delay: 0.1s;
+}
+
+.about-section {
+    animation-delay: 0.25s;
+}
+
+.mission {
+    animation-delay: 0.4s;
+}
+
+.vision-section {
+    animation-delay: 0.55s;
+}
+
+.founders {
+    animation-delay: 0.7s;
+}
+
+
+/* Page Container - Only background added */
+.about-page {
+    background-color: #FFFFFF;
+}
 
 /* ========== COMMON IMAGE SIZE ========== */
 .section-image {
@@ -11,7 +82,7 @@
     height: auto;
     display: block;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); */
 }
 
 /* ========== HERO SECTION ========== */
@@ -28,6 +99,8 @@
 .hero-image {
     flex: 0 0 400px;
     max-width: 400px;
+    order: 2;
+
 }
 
 .hero-image img {
@@ -35,12 +108,13 @@
     height: auto;
     display: block;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); */
 }
 
 .hero-text {
     flex: 1;
     text-align: left;
+    order: 1;
 }
 
 .hero-text h1 {
@@ -67,24 +141,28 @@
 .about-image {
     flex: 0 0 400px;
     max-width: 400px;
+    order: 2;
 }
 
 .about-image img {
     width: 100%;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); */
 }
 
 .about-text {
     flex: 1;
     text-align: left;
+    order: 1;
 }
 
 .about-text p {
     font-size: 20px;
     line-height: 1.6;
     color: #4B5563;
+    text-align: right;
+    /* font-weight: 601px; */
 }
 
 /* ========== MISSION SECTION ========== */
@@ -101,13 +179,14 @@
 .mission-image-center {
     flex: 0 0 400px;
     max-width: 400px;
+    order: 2;
 }
 
 .mission-image-center img {
     width: 100%;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);  */
 }
 
 .mission-content {
@@ -118,7 +197,10 @@
 .mission h2 {
     font-size: 50px;
     font-weight: 900;
-    color: #F59E0B;
+    background: linear-gradient(90deg, #E89530 2%, #EC3837 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 20px;
     letter-spacing: 2px;
 }
@@ -127,6 +209,8 @@
     font-size: 20px;
     line-height: 1.7;
     color: #374151;
+    order: 1;
+    margin-left: 11px;
 }
 
 /* ========== VISION SECTION - Multiple Layers ========== */
@@ -138,103 +222,85 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #f8fafc;
+    margin-top: 50px;
 }
 
 /* Background Image (Architecture) - Blurred */
 .vision-bg {
     position: absolute;
-    inset: 0;
-    width: 100%;
+    top: 0;
+    left: 0;
+    width: 100vw;
     height: 100%;
     object-fit: cover;
-    filter: brightness(1.05);
+    object-position: center center;
     z-index: 1;
+    filter: brightness(1.1) contrast(1.05);
 }
-
 
 .vision-watermark {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+    width: 350px;
+    height: 350px;
     z-index: 2;
-    width: 70%;
-    max-width: 900px;
-    opacity: 50;
-    /* 👈 faded text like Figma */
+    opacity: 0.85;
     pointer-events: none;
 }
 
-/* Overlay Image - Center, Smaller */
-.vision-content {
-    position: relative;
-    z-index: 3;
-    max-width: 800px;
-    padding: 0 40px;
-    text-align: center;
-}
-
-.vision-content p {
-    font-size: 26px;
-    font-weight: 500;
-    line-height: 1.7;
-    color: #111827;
-}
-
-.vision-background img {
+.vision-background {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    filter: blur(2px);
+    background-image: url("../assets/architectural.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    transform: scale(1.08);
+    /* blur edges hide */
+    opacity: 0.9;
+    z-index: 1;
+    margin-top: 30px;
 }
 
-/* Overlay Image - Simple */
+
 .vision-overlay-image {
     position: absolute;
     z-index: 2;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-
+    height: 105px;
     overflow: hidden;
-    /* box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); */
+    width: 55rem;
 }
 
 .vision-overlay-image img {
     width: 100%;
-    height: 100%;
+    height: 89%;
     object-fit: cover;
 }
 
-/* Text - No Card/Background */
 .vision-content {
     position: relative;
     z-index: 3;
     text-align: center;
     max-width: 700px;
     padding: 0 40px;
-
-}
-
-.vision-content h2 {
-    font-size: 64px;
-    font-weight: 900;
-    background: linear-gradient(90deg, #E89530 0%, #EC3837 50%, #E89530 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .vision-content p {
-    font-size: 22px;
+    font-size: 31px;
     line-height: 1.7;
-    color: #000000d1;
+    color: #000000;
     font-weight: 500;
     margin: 0;
+    /* width: 500px; */
+    font-weight: 600;
 }
-
 
 /* ========== FOUNDERS SECTION - SIMPLE LAYOUT ========== */
 .founders {
@@ -243,10 +309,9 @@
 }
 
 .founders h2 {
-    font-size: 42px;
+    font-size: 50px;
     font-weight: 900;
-    /* 👇 Linear Gradient - #E89530 to #EC3837 */
-    background: linear-gradient(90deg, #E89530 0%, #EC3837 100%);
+    background: linear-gradient(90deg, #E89530 2%, #EC3837 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -265,7 +330,6 @@
     gap: 40px;
     margin-bottom: 60px;
     padding: 0;
-    /* No padding */
 }
 
 .founder-row:last-child {
@@ -279,14 +343,12 @@
 }
 
 .founder-image img {
-    flex-flow: vertical;
     width: 250px;
     height: 250px;
     object-fit: cover;
     border-radius: 8px;
     display: block;
     margin: 0 auto 12px;
-
 }
 
 .founder-name {
@@ -317,9 +379,7 @@
     font-size: 18px;
     color: #4B5563;
     line-height: 1.7;
-
-
-    font-weight: 500;
+    font-weight: 600;
     font: Work sans;
     margin-top: 50px;
 }
@@ -340,11 +400,24 @@
     transition: transform 0.3s;
 }
 
-.social-icon:hover {
-    transform: scale(1.1);
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 1024px) {
+
+    .hero,
+    .about-section,
+    .mission {
+        gap: 40px;
+        padding: 50px 30px;
+    }
+
+    .hero-image,
+    .about-image,
+    .mission-image-center {
+        flex: 0 0 350px;
+        max-width: 350px;
+    }
 }
 
-/* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 768px) {
 
     /* Hero */
@@ -352,11 +425,14 @@
         flex-direction: column;
         padding: 40px 20px;
         gap: 30px;
+        text-align: center;
     }
 
     .hero-image {
-        flex: 0 0 auto;
-        max-width: 100%;
+        flex: none;
+        max-width: 300px;
+        margin: 0 auto;
+        order: 1;
     }
 
     .hero-text {
@@ -369,14 +445,16 @@
 
     /* About */
     .about-section {
-        flex-direction: column;
+        flex-direction: column-reverse;
         padding: 40px 20px;
         gap: 30px;
+        text-align: center;
     }
 
     .about-image {
-        flex: 0 0 auto;
-        max-width: 100%;
+        flex: none;
+        max-width: 300px;
+        margin: 0 auto;
     }
 
     .about-text {
@@ -385,6 +463,7 @@
 
     .about-text p {
         font-size: 16px;
+        text-align: center;
     }
 
     /* Mission */
@@ -392,11 +471,13 @@
         flex-direction: column;
         padding: 40px 20px;
         gap: 30px;
+        text-align: center;
     }
 
     .mission-image-center {
-        flex: 0 0 auto;
-        max-width: 100%;
+        flex: none;
+        max-width: 300px;
+        margin: 0 auto;
     }
 
     .mission-content {
@@ -404,7 +485,7 @@
     }
 
     .mission h2 {
-        font-size: 32px;
+        font-size: 36px;
     }
 
     .mission-text p {
@@ -413,10 +494,32 @@
 
     .vision-section {
         height: 520px;
+        padding: 0;
     }
 
-    .vision-watermark {
-        width: 90%;
+    .vision-background {
+        /* filter: blur(7px); */
+        /* transform: scale(1.12); */
+        opacity: 0.9;
+        background-position: center;
+    }
+
+
+    .vision-watermark,
+    .vision-overlay-image {
+        width: 360px;
+        margin-top: 34px;
+        /* height: 200px; */
+    }
+
+    .vision-content {
+        padding: 0 20px;
+    }
+
+    .vision-overlay-image img {
+        width: 100%;
+        height: 36%;
+        object-fit: cover;
     }
 
     .vision-content p {
@@ -429,9 +532,8 @@
     }
 
     .founders h2 {
-        font-size: 32px;
+        font-size: 36px;
         margin-bottom: 40px;
-
     }
 
     .founder-row {
@@ -447,23 +549,65 @@
     }
 
     .founder-image img {
-        width: 250px;
-        height: 250px;
+        width: 180px;
+        height: 180px;
     }
 
     .founder-info {
+        margin-top: 0;
         text-align: center;
     }
 
+    .founder-info p {
+        margin-top: 0;
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 480px) {
+
+    .hero,
+    .about-section,
+    .mission,
+    .founders {
+        padding: 30px 15px;
+    }
+
+    .hero-text h1,
     .founders h2 {
+        font-size: 24px;
+    }
+
+    .mission h2 {
         font-size: 28px;
     }
 
+    .hero-image,
+    .about-image,
+    .mission-image-center {
+        max-width: 250px;
+    }
+
+    .vision-section {
+        height: 450px;
+    }
+
+    .vision-watermark,
+    .vision-overlay-image {
+        width: 360px;
+        margin-top: 38px;
+        /* height: 200px; */
+    }
+
+    .vision-overlay-image img {
+        width: 100%;
+        height: 36%;
+        object-fit: cover;
+    }
+
+
     .founder-image img {
-        width: 100px;
-        height: 100px;
+        width: 140px;
+        height: 140px;
     }
 }
