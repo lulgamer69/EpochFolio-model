@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
@@ -7,6 +7,23 @@ import logo from "../assets/epochfolio-logo.png";
 import "./slider.css";
 
 const Slider = ({ isOpen, onClose }) => {
+  const [activePopup, setActivePopup] = useState(null);
+
+  const popupData = {
+    privacy: {
+      title: "Privacy Policy",
+      text: "At Epochfolio, we value your privacy. We do not share your personal data with third parties without consent. All your information is encrypted and secure."
+    },
+    terms: {
+      title: "Terms of Services",
+      text: "By using our website, you agree to follow our guidelines. Content ownership remains with the creators, and misuse of the platform is strictly prohibited."
+    },
+    cookies: {
+      title: "Cookie Policy",
+      text: "We use cookies to enhance your browsing experience. These cookies help us analyze site traffic and personalize content for you."
+    }
+  };
+
   const menuVariants = {
     hidden: { x: "100%", opacity: 0 },
     visible: {
@@ -47,14 +64,12 @@ const Slider = ({ isOpen, onClose }) => {
           animate="visible"
           exit="exit"
         >
-
           <div className="slider-header">
             <img src={logo} alt="Epochfolio" className="slider-logo" />
             <div className="close-icon" onClick={onClose}>
               <FiX />
             </div>
           </div>
-
 
           <div className="slider-links">
             {navLinks.map((item, i) => (
@@ -75,23 +90,36 @@ const Slider = ({ isOpen, onClose }) => {
             ))}
           </div>
 
-
           <div className="slider-footer">
             <div className="policy-links">
-              <p>Privacy Policy</p>
-              <p>Terms of Services</p>
-              <p>Cookie Policy</p>
+              <p onClick={() => setActivePopup("privacy")}>Privacy Policy</p>
+              <p onClick={() => setActivePopup("terms")}>Terms of Services</p>
+              <p onClick={() => setActivePopup("cookies")}>Cookie Policy</p>
             </div>
 
             <p className="copyright-text">
               © 2025 Epochfolio . All rights reserved.
             </p>
 
-
             <div className="slider-watermark">
               EPOCHFOLIO
             </div>
           </div>
+
+          {activePopup && (
+            <div className="popup-overlay" onClick={() => setActivePopup(null)}>
+              <motion.div
+                className="popup-box"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <h3>{popupData[activePopup].title}</h3>
+                <p>{popupData[activePopup].text}</p>
+                <button onClick={() => setActivePopup(null)}>OK</button>
+              </motion.div>
+            </div>
+          )}
 
         </motion.div>
       )}
