@@ -169,9 +169,10 @@ main {
 }
 
 .who h1 {
-  margin: 0;
-  font-size: clamp(58px, 4vw, 26px);
+  margin: 0 0 0;
+  font-size: clamp(57px, 4vw, 26px);
   font-weight: 800;
+ 
 }
 
 
@@ -190,6 +191,14 @@ main {
   line-height: 1.7;
   color: #475569;
 }
+
+.who .p1 {
+  margin: 28px 0 0;
+  font-size: clamp(28px, 3vw, 15px);
+  line-height: 1.7;
+  color: #000000;
+}
+
 
 /* DIVIDER */
 .who::after {

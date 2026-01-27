@@ -14,8 +14,10 @@ export default function Features() {
 
       <section className="who">
         <h1>
-          PAGE FOR <span>FEATURES</span>
+        Why <span>Colleges</span> & <span>Companies</span> <br/> Trust <span>Epochfolio</span>
         </h1>
+
+        <div class="p1">Effortlessly streamline your campus placement process by accessing the latest job opening, managing student data, and securing interviews, all with the aim of achieving a 100% campus placement sucess rate.</div>
       </section>
 
         <section className="college-section">
@@ -48,7 +50,7 @@ export default function Features() {
             </div>
         
             {/* BOTTOM ROW — 2 CARDS CENTERED */}
-            <div className="colleges-row-bottom1  ">
+            <div className="colleges-row-bottom1">
               <div className="college-card">
                 <img src={support} className="college-card-img" />
                 <div className="college-card-body">
