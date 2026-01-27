@@ -1,0 +1,239 @@
+/* FOOTER - ALWAYS HORIZONTAL */
+.footer-section {
+    margin-top: 0; /* 👈 0 karo */
+    padding: 2.5rem 0;
+    background-color: #000;
+    color: white;
+    /* position :absolute👈 Add karo */
+}
+
+.footer {
+    background: #000;
+    color: white;
+    padding: 50px 30px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Top Columns - FORCE 3 columns */
+.footer-top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) !important;
+    /* 👈 !important add karo */
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #FFF;
+    margin-bottom: 15px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: #6B7280;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-column a:hover {
+    color: #FFF;
+}
+
+/* Center Logo */
+.footer-center {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.footer-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    max-width: 120px;
+    height: auto;
+}
+
+.footer-logo img {
+    width: 120px;
+    height: auto;
+}
+
+.footer-center p {
+    max-width: 500px;
+    margin: 0 auto;
+    color: #FFF;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Social Icons */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+/* Bottom */
+.footer-bottom {
+    margin-top: 8px;
+    padding-top: 22px;
+    /* border-top: 1px solid #222; */
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #777;
+}
+
+.footer-bottom p {
+    font-size: 15px;
+    color: #6B7280;
+    margin: 27px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-right: 27px;
+
+}
+
+.footer-links a {
+    color: #9CA3AF;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    color: #FFF;
+}
+
+/* Brand */
+.footer-brand {
+    font-size: 55px;
+    font-weight: 900;
+    color: #989797;
+    background: linear-gradient(180deg, #989797 0%, #989797 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    /* ✅ Already hai */
+    letter-spacing: 6px;
+    margin: 20px auto;
+    /* 👈 auto add karo */
+    padding: 0;
+    /* 👈 Extra padding remove */
+    opacity: 0.4;
+    display: block;
+    /* 👈 Block element */
+    width: 100%;
+    /* 👈 Full width */
+}
+
+
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 15px 15px;
+    }
+
+    .footer-top {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    .footer-column h4 {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .footer-column a {
+        font-size: 10px;
+    }
+
+    .footer-column li {
+        margin-bottom: 8px;
+    }
+
+    .footer-logo img {
+        width: 200px;
+        text-align: center;
+    }
+
+    .footer-center p {
+        font-size: 11px;
+        padding: 0 10px;
+    }
+
+    .social-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .footer-links {
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .footer-links a {
+        font-size: 11px;
+    }
+
+    .footer-brand {
+        font-size: 32px;
+        letter-spacing: 4px;
+        margin-top: 30px;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* 👇 Even on very small screens - stay horizontal */
+    .footer-top {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 8px !important;
+    }
+
+    .footer-column h4 {
+        font-size: 11px;
+    }
+
+    .footer-brand {
+        font-size: 43px;
+        letter-spacing: 3px;
+    }
+
+    .footer-column a {
+        font-size: 9px;
+    }
+}
