@@ -168,9 +168,21 @@ main {
   font-weight: 700;
 }
 
+.who h1 {
+  margin: 0;
+  font-size: clamp(58px, 4vw, 26px);
+  font-weight: 800;
+}
+
+
+.who h1 span {
+  color: #f58220;
+}
+
 .who h2 span {
   color: #f58220;
 }
+
 
 .who p {
   margin: 16px 0 0;
@@ -382,11 +394,27 @@ main {
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
 }
+.colleges-row-top1 {
+  
+  margin: 0 auto 40px;
+  max-width:1240px ;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
 /* Second row: 2 cards centered */
 .colleges-row-bottom {
 
   margin: 0 auto;
   max-width:740px ;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+.colleges-row-bottom1 {
+
+  margin: 0 auto;
+  max-width:840px ;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
@@ -442,7 +470,16 @@ main {
     grid-template-columns: repeat(3, 1fr);
   }
 
+   .colleges-row-top1 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
   .colleges-row-bottom {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .colleges-row-bottom1 {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -458,7 +495,9 @@ main {
   }
 
   .colleges-row-top,
-  .colleges-row-bottom {
+  .colleges-row-top1,
+  .colleges-row-bottom, 
+  .colleges-row-bottom1 {
     grid-template-columns: 1fr;
     gap: 24px;
   }
